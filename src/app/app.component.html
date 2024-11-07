@@ -1,0 +1,8 @@
+<h2>Todo app</h2>
+
+<input id="newNotes">
+<button (click)="addNotes()">Add Notes</button>
+<h3 *ngFor="let note of notes ?? []"> <!-- Use nullish coalescing operator to handle 'notes' being undefined -->
+  <b>{{ note.description }}</b>
+  <button (click)="deleteNotes(note?.id)">Delete Notes</button> <!-- Use conditional operator to handle 'note' being undefined -->
+</h3>
